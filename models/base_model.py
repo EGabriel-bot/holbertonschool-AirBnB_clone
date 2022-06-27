@@ -9,6 +9,12 @@ class BaseModel:
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
+        if kwargs:
+            for k, v, in kwargs.items():
+                if k == "created_at" or k == "updated_at":
+                    v = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f")
+                if k != "__class__":
+                    setattr(self, k, v)
 
     def __str__(self):
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
@@ -24,10 +30,10 @@ class BaseModel:
         return dictionary
 
 
-test = BaseModel()
-print(test.updated_at)
-time.sleep(5)
-test.save()
-print(test.updated_at)
-var = test.to_dict()
-print(var)
+# test = BaseModel()
+# print(test.updated_at)
+# time.sleep(5)
+# test.save()
+# print(test.updated_at)
+# var = test.to_dict()
+# print(var)
