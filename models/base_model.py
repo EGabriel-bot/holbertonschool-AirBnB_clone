@@ -13,6 +13,13 @@ class BaseModel:
     def save(self):
         self.updated_at = datetime.now()
 
+    def to_dict(self):
+        dictionary = self.__dict__.copy()
+        dictionary["__class__"] = str(type(self).__name__)
+        dictionary["created_at"] = self.created_at.isoformat()
+        dictionary["updated_at"] = self.updated_at.isoformat()
+        return dictionary
+
 
 test = BaseModel()
 print(test.updated_at)
