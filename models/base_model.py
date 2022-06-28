@@ -1,7 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import models
 from uuid import uuid4
 from datetime import datetime
+import time
 
 
 class BaseModel:
