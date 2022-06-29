@@ -78,6 +78,31 @@ class HBNBCommand(cmd.Cmd):
             if match is not True:
                 print("** no instance found **")
 
+    def do_update(self, args):
+        'Updates an instance\n'
+        arg_list = args.split()
+        all_objs = storage.all()
+        if len(arg_list) == 0:
+            print("** class name missing **")
+        elif arg_list[0] != BaseModel.name:
+            print("** class doesn't exist **")
+        elif len(arg_list) == 1:
+            print("** instance id missing **")
+        else:
+            match = False
+            for obj_id in all_objs.keys():
+                if arg_list[1] == all_objs[obj_id].id:
+                    match = all_objs[obj_id]
+            if match is False:
+                print("** no instance found **")
+            else:
+                if len(arg_list) == 2:
+                    print("** attribute name is missing **")
+                elif len(arg_list) == 3:
+                    print("** value is missing **")
+                else:
+                    setattr(match, arg_list[2], arg_list[3])
+
    # ------------- PreCmd and PostCmd -------
     """
     def precmd(self, line):
