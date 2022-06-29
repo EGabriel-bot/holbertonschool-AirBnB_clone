@@ -2,6 +2,7 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+import json
 
 
 class HBNBCommand(cmd.Cmd):
@@ -71,10 +72,14 @@ class HBNBCommand(cmd.Cmd):
             for obj_id in rep:
                 if arg[1] == rep[obj_id].id:
                     try:
-                        rep.pop('[BaseModel]', None)
+                        match = True
+                        del rep[obj_id]
+                        with open("file.json", 'w', encoding="utf-8") as json_file:
+                            json_file.write(json.dumps(rep))
+                        break
                     except KeyError:
                         pass
-                    match = True
+
             if match is not True:
                 print("** no instance found **")
 
