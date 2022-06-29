@@ -45,8 +45,18 @@ class HBNBCommand(cmd.Cmd):
             if match is not True:
                 print("** no instance found **")
 
-   # ------------- PreCmd and PostCmd -------
+    def do_all(self, args):
+        'Prints all string representation of all instances based or not on the class name'
+        rep = storage.all()
+        if args != BaseModel.__name__:
+            print("** class doesn't exist **")
+        else:
+            obj_list = []
+            for obj in rep:
+                obj_list.append(rep[obj].__str__())
+            print(obj_list)
 
+   # ------------- PreCmd and PostCmd -------
     """
     def precmd(self, line):
         line = line.lower()
