@@ -56,6 +56,28 @@ class HBNBCommand(cmd.Cmd):
                 obj_list.append(rep[obj].__str__())
             print("{}".format(obj_list))
 
+    def do_destroy(self, args):
+        'Deletes an instance based on the class name and id\n'
+        rep = storage.all()
+        arg = args.split()
+        if not arg:
+            print("** class name missing **")
+        elif arg[0] != BaseModel.__name__:
+            print("** class doesn't exist **")
+        elif len(arg) == 1:
+            print("** instance id missing **")
+        else:
+            match = False
+            for obj_id in rep:
+                if arg[1] == rep[obj_id].id:
+                    try:
+                        rep.pop('[BaseModel]', None)
+                    except KeyError:
+                        pass
+                    match = True
+            if match is not True:
+                print("** no instance found **")
+
    # ------------- PreCmd and PostCmd -------
     """
     def precmd(self, line):
