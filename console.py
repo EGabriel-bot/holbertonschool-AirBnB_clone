@@ -36,13 +36,14 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg) == 1:
             print("** instance id missing **")
-        # elif len(arg) > 1 and arg != rep.id:
-            #print("** no instance found **")
         else:
-            for obj_id in rep.keys():
-                if args[1] == rep[obj_id]:
-                    print(obj_id)
-        # print(arg)
+            match = False
+            for obj_id in rep:
+                if arg[1] == rep[obj_id].id:
+                    print(rep[obj_id])
+                    match = True
+            if match is not True:
+                print("** no instance found **")
 
    # ------------- PreCmd and PostCmd -------
 
