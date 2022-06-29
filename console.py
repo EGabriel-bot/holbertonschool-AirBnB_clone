@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import cmd
-import json
 from models.base_model import BaseModel
+from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -12,34 +12,37 @@ class HBNBCommand(cmd.Cmd):
         exit()
 
     def do_EOF(self, args):
-        'Quit command to exit the program\n'
+        'EOF command to exit the program\n'
         exit()
 
     def do_create(self, args):
         'Creates a new instance of BaseModel, saves it (to the JSON file)\n'
         if not args:
             print("** class name missing **")
-        if args != BaseModel.__name__:
+        elif args != BaseModel.__name__:
             print("** class doesn't exist **")
         else:
             new = BaseModel()
-            #json.dump(new, file.json)
+            new.save()
             print(new.id)
 
-    def do_show(self, *args):
+    def do_show(self, args):
         'Prints the string representation of an instance based on the class name and id\n'
-        new = BaseModel()
-        #arg = args.split()
-        if not args[0]:
+        rep = storage.all()
+        arg = args.split()
+        if not arg:
             print("** class name missing **")
-        elif args[0] != BaseModel.__name__:
+        elif arg[0] != BaseModel.__name__:
             print("** class doesn't exist **")
-        elif len(args) == 1:
+        elif len(arg) == 1:
             print("** instance id missing **")
-        elif len(args) == 1 or args[1] != new.id:
-            print("** no instance found **")
+        # elif len(arg) > 1 and arg != rep.id:
+            #print("** no instance found **")
         else:
-            print(args)
+            for obj_id in rep.keys():
+                if args[1] == rep[obj_id]:
+                    print(obj_id)
+        # print(arg)
 
    # ------------- PreCmd and PostCmd -------
 
