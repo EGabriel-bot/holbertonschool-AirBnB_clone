@@ -54,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
             obj_list = []
             for obj in rep:
                 obj_list.append(rep[obj].__str__())
-            print(obj_list)
+            print("{}".format(obj_list))
 
    # ------------- PreCmd and PostCmd -------
     """
