@@ -44,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
             print(new.id)
 
     def do_show(self, args):
-        'Prints the string representation of an instance based on the class name and id\n'
+        'Prints string representation for instance based on class and id\n'
         rep = storage.all()
         arg = args.split()
         if not arg:
@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, args):
-        'Prints all string representation of all instances based or not on the class name'
+        'Prints string representations of all instances\n'
         rep = storage.all()
         arg = args.split()
         if len(args) == 0:
@@ -98,10 +98,10 @@ class HBNBCommand(cmd.Cmd):
                         match = True
                         del rep[obj_id].id
                         new = {}
-                        with open("file.json", 'w', encoding="utf-8") as json_file:
+                        with open("file.json", 'w', encoding="utf-8") as json:
                             for key, value in rep.items():
                                 new.update({key: value.to_dict()})
-                            json_file.write(json.dumps(new))
+                            json.write(json.dumps(new))
                         break
                     except KeyError:
                         pass
@@ -133,8 +133,6 @@ class HBNBCommand(cmd.Cmd):
                     print("** value is missing **")
                 else:
                     setattr(match, arg_list[2], arg_list[3])
-
-   # ------------- PostCmd -------
 
     def postcmd(self, stop, line):
         if cmd.Cmd.do_help:

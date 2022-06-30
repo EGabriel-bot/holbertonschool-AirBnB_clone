@@ -2,11 +2,12 @@
 """Defines the User class."""
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     """Represents user info.
-    
+
         Inherits from BaseModel.
-        
+
         Attributes:
         email: The users email.
         password: The users password.
