@@ -134,14 +134,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     setattr(match, arg_list[2], arg_list[3])
 
-   # ------------- PreCmd and PostCmd -------
-    """
-    def precmd(self, line):
-        line = line.lower()
-        if self.file:
-            print(line, file=self.file)
-        return line
-    """
+   # ------------- PostCmd -------
 
     def postcmd(self, stop, line):
         if cmd.Cmd.do_help:
