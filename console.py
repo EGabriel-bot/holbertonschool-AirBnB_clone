@@ -12,16 +12,16 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    
+
     prompt = '(hbnb) '
     __classes = {
-        "BaseModel",
-        "User",
-        "State",
-        "City",
-        "Place",
-        "Amenity",
-        "Review"
+        "BaseModel": BaseModel(),
+        "User": User(),
+        "State": State(),
+        "City": City(),
+        "Place": Place(),
+        "Amenity": Amenity(),
+        "Review": Review()
     }
 
     def do_quit(self, args):
@@ -39,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
         elif args not in self.__classes:
             print("** class doesn't exist **")
         else:
-            new = BaseModel()
+            new = self.__classes[args]
             new.save()
             print(new.id)
 
