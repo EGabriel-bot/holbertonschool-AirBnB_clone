@@ -73,9 +73,12 @@ class HBNBCommand(cmd.Cmd):
                 if arg[1] == rep[obj_id].id:
                     try:
                         match = True
-                        del rep[obj_id]
+                        del rep[obj_id].id
+                        new = {}
                         with open("file.json", 'w', encoding="utf-8") as json_file:
-                            json_file.write(json.dumps(rep))
+                            for key, value in rep.items():
+                                new.update({key: value.to_dict()})
+                            json_file.write(json.dumps(new))
                         break
                     except KeyError:
                         pass
