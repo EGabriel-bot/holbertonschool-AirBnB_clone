@@ -3,10 +3,26 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 import json
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
+    
     prompt = '(hbnb) '
+    __classes = {
+        "BaseModel",
+        "User",
+        "State",
+        "City",
+        "Place",
+        "Amenity",
+        "Review"
+    }
 
     def do_quit(self, args):
         'Quit command to exit the program\n'
@@ -20,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         'Creates a new instance of BaseModel, saves it (to the JSON file)\n'
         if not args:
             print("** class name missing **")
-        elif args != BaseModel.__name__:
+        elif args not in self.__classes:
             print("** class doesn't exist **")
         else:
             new = BaseModel()
@@ -33,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
         arg = args.split()
         if not arg:
             print("** class name missing **")
-        elif arg[0] != BaseModel.__name__:
+        elif arg[0] not in self.__classes:
             print("** class doesn't exist **")
         elif len(arg) == 1:
             print("** instance id missing **")
@@ -49,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         'Prints all string representation of all instances based or not on the class name'
         rep = storage.all()
-        if args != BaseModel.__name__:
+        if args not in self.__classes:
             print("** class doesn't exist **")
         else:
             obj_list = []
@@ -63,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         arg = args.split()
         if not arg:
             print("** class name missing **")
-        elif arg[0] != BaseModel.__name__:
+        elif arg[0] not in self.__classes:
             print("** class doesn't exist **")
         elif len(arg) == 1:
             print("** instance id missing **")
@@ -92,7 +108,7 @@ class HBNBCommand(cmd.Cmd):
         all_objs = storage.all()
         if len(arg_list) == 0:
             print("** class name missing **")
-        elif arg_list[0] != BaseModel.name:
+        elif arg_list[0] not in self.__classes:
             print("** class doesn't exist **")
         elif len(arg_list) == 1:
             print("** instance id missing **")
