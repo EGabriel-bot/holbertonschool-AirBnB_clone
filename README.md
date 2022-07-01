@@ -4,7 +4,6 @@ This repository contains the initial stage of a student project to build a clone
 
 ---
 <br>
-<br>
 <center> <h2>General Use</h2> </center>
 
 1. First clone this repository.
