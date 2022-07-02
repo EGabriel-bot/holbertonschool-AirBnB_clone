@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Instantiates storage object."""
 from models.engine.file_storage import FileStorage
 
