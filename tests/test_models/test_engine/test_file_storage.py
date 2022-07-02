@@ -2,11 +2,11 @@
 """Unit test for Amenity class"""
 
 from models.base_model import BaseModel
-from models.base_model import FileStorage
+from models.engine.file_storage import FileStorage
 import unittest
 
 
-class TestFileStorageClass(unittest.TestCase):
+class TestFileStorage(unittest.TestCase):
     """Amenity test"""
 
 

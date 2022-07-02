@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """Unit test for Amenity class"""
-from models.base_model import Review
-from console import HBNBCommand
+from models.review import Review
 import console
 import unittest
 
 
-class TestBaseModel(unittest.TestCase):
+class Test_Review(unittest.TestCase):
     """Review test"""
 
 
