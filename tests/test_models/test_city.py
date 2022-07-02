@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-Unit test for Amenity class
-"""
+"""Unit test for Amenity class"""
+
 from models.base_model import City
 from console import HBNBCommand
 import console
