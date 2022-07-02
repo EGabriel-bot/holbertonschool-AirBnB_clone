@@ -9,5 +9,6 @@ import unittest
 class TestBaseModel(unittest.TestCase):
     """Review test"""
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

@@ -10,5 +10,6 @@ import unittest
 class TestBaseModel(unittest.TestCase):
     """City test"""
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

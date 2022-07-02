@@ -9,5 +9,6 @@ import unittest
 class TestFileStorageClass(unittest.TestCase):
     """Amenity test"""
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

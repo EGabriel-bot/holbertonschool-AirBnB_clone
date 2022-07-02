@@ -8,5 +8,6 @@ import unittest
 class TestBaseModel(unittest.TestCase):
     """Base_model test"""
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()
