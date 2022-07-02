@@ -29,15 +29,11 @@ class BaseModel:
         """Returns the print/str representation of the BaseModel"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
-    """Public instance method"""
-
     def save(self):
         """Update updated_at with the current datetime."""
         self.updated_at = datetime.now()
         models.storage.new(self)
         models.storage.save()
-
-    """Public instance method"""
 
     def to_dict(self):
         """Return a dictionary representation of the BaseModel"""
