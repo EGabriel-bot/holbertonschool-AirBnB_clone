@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Console Module"""
 import cmd
 from models.base_model import BaseModel
 from models import storage
@@ -12,6 +13,7 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
+    """Class for hbnb command line interpreter"""
 
     prompt = '(hbnb) '
     __classes = {
