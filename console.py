@@ -111,6 +111,24 @@ class HBNBCommand(cmd.Cmd):
             if match is not True:
                 print("** no instance found **")
 
+    def do_all(self, args):
+        'Prints string representations of all instances\n'
+        rep = storage.all()
+        arg = args.split()
+        if len(args) == 0:
+            obj_list = []
+            for obj in rep.keys():
+                obj_list.append(rep[obj].__str__())
+            print("{}".format(obj_list))
+        elif arg[0] not in self.__classes:
+            print("** class doesn't exist **")
+        else:
+            obj_list = []
+            for obj in rep.keys():
+                if arg[0] == rep[obj].__class__.__name__:
+                    obj_list.append(rep[obj].__str__())
+            print("{}".format(obj_list))
+
     def do_update(self, args):
         'Updates an instance\n'
         arg_list = args.split()
