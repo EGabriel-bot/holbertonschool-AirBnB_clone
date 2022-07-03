@@ -8,6 +8,7 @@ from models.city import City
 from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
+#from console import HBNBCommand
 
 
 class FileStorage:
@@ -17,6 +18,16 @@ class FileStorage:
         __file_path (str): The name of the file to save objects to.
         __objects (dict): A dictionary of instantiated objects.
     """
+
+    __classes = {
+        "BaseModel": BaseModel(),
+        "User": User(),
+        "State": State(),
+        "City": City(),
+        "Place": Place(),
+        "Amenity": Amenity(),
+        "Review": Review()
+    }
 
     __file_path = "file.json"
     __objects = {}
@@ -44,6 +55,6 @@ class FileStorage:
                 for o in json.load(file).values():
                     name = o["__class__"]
                     del o["__class__"]
-                    self.new(eval(name)(**o))
+                    self.new(self.__classes[name](**o))
         except FileNotFoundError:
             pass
