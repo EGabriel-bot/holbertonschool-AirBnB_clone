@@ -18,16 +18,6 @@ class FileStorage:
         __objects (dict): A dictionary of instantiated objects.
     """
 
-    __classes = {
-        "BaseModel": BaseModel(),
-        "User": User(),
-        "State": State(),
-        "City": City(),
-        "Place": Place(),
-        "Amenity": Amenity(),
-        "Review": Review()
-    }
-
     __file_path = "file.json"
     __objects = {}
 
