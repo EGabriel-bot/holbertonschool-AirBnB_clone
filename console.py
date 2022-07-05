@@ -130,9 +130,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 if len(arg_list) == 2:
-                    print("** attribute name is missing **")
+                    print("** attribute name missing **")
                 elif len(arg_list) == 3:
-                    print("** value is missing **")
+                    print("** value missing **")
                 else:
                     setattr(match, arg_list[2], arg_list[3])
 

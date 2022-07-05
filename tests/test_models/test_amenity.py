@@ -8,6 +8,10 @@ import unittest
 class Test_Amenity(unittest.TestCase):
     """Amenity test"""
 
+    def test_variable(self):
+        """ Test if variables exists in class """
+        obj = Amenity()
+        self.assertEqual(obj.name, "")
 
-if __name__ == "__main__":
-    unittest.main()
+    if __name__ == "__main__":
+        unittest.main()

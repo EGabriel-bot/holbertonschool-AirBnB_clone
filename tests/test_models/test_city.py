@@ -2,13 +2,16 @@
 """Unit test for Amenity class"""
 
 from models.city import City
-import console
 import unittest
 
 
 class Test_City(unittest.TestCase):
     """City test"""
 
+    def test_variable(self):
+        obj = City()
+        self.assertEqual(obj.state_id, "")
+        self.assertEqual(obj.name, "")
 
-if __name__ == "__main__":
-    unittest.main()
+    if __name__ == "__main__":
+        unittest.main()

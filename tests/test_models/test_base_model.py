@@ -2,6 +2,7 @@
 """Unit test for Amenity class"""
 
 from models.base_model import BaseModel
+from os.path import exists
 import unittest
 
 
@@ -10,27 +11,33 @@ class Test_BaseModel(unittest.TestCase):
 
     def test_created_at(self):
         """Test created_at"""
-        pass
+        obj = BaseModel()
+        self.assertEqual(obj.created_at(), None)
 
     def test_updated_at(self):
         """Test updated_at"""
+        obj = BaseModel()
+        self.assertEqual(obj.updated_at(), None)
 
-    def test_todict(self):
+    def test_to_dict(self):
         """Test todict method"""
-        pass
+        obj = BaseModel()
+        self.assertEqual(type(obj.to_dict()), dict)
 
     def test_save(self):
         """Test save method"""
-        pass
-
-    def test_to_dict(self):
-        """Test to_dict method"""
-        pass
+        obj = BaseModel()
+        self.assertEqual(obj.save(), None)
 
     def test_id(self):
         """Test id"""
-        pass
+        obj = BaseModel()
+        self.assertEqual(type(obj.id), str)
 
+    def test_str(self):
+        """ test __str__ return value type """
+        obj = BaseModel()
+        self.assertEqual(type(obj.__str__()), str)
 
-if __name__ == "__main__":
-    unittest.main()
+    if __name__ == "__main__":
+        unittest.main()
