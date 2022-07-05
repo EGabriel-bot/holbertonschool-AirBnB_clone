@@ -12,12 +12,12 @@ class TestFileStorage(unittest.TestCase):
     def test_file_path(self):
         """ test for file path """
         obj = FileStorage()
-        self.assertEqual(type(obj.__file_path), str)
+        self.assertEqual(obj.__file_path, None)
 
     def test_objects(self):
         """ test for objects """
-        obj = FileStorage()
-        self.assertEqual(type(obj.__objects), dict)
+        FileStorage.__objects = {}
+        #assert len(FileStorage().assignment.values()) == 0
 
     def test_new(self):
         """ test the instance new """
