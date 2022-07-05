@@ -2,8 +2,6 @@
 """Unit test for Amenity class"""
 
 from models.user import User
-from console import HBNBCommand
-import console
 import unittest
 
 
