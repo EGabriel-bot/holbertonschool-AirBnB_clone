@@ -75,18 +75,23 @@ class HBNBCommand(cmd.Cmd):
         elif len(arg) == 1:
             print("** instance id missing **")
         else:
+            match = False
             for obj_id in rep:
                 if arg[1] == rep[obj_id].id:
                     try:
+                        match = True
                         del rep[obj_id]
                         new = {}
-                        for key in rep.keys():
-                            new[key] = rep[key].to_dict()
                         with open("file.json", 'w', encoding="utf-8") as json_file:
+                            for key, value in rep.items():
+                                new.update({key: value.to_dict()})
                             json_file.write(json.dumps(new))
                         break
                     except KeyError:
-                        print("** no instance found **")
+                        pass
+
+            if match is not True:
+                print("** no instance found **")
 
     def do_all(self, args):
         'Prints string representations of all instances\n'
