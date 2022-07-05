@@ -9,10 +9,15 @@ import unittest
 class TestFileStorage(unittest.TestCase):
     """Tests for File Storage"""
 
-    def test_class_name(self):
-        """ test if the all func returns the objects private var """
+    def test_file_path(self):
+        """ test for file path """
         obj = FileStorage()
-        self.assertEqual((obj.__class__).__name__, "FileStorage")
+        self.assertEqual(type(obj.__file_path), str)
+
+    def test_objects(self):
+        """ test for objects """
+        obj = FileStorage()
+        self.assertEqual(type(obj.__objects), dict)
 
     def test_new(self):
         """ test the instance new """
@@ -42,6 +47,5 @@ class TestFileStorage(unittest.TestCase):
         obj.name = "Juannito Perez"
         self.assertEqual(other.__init__(obj), None)
 
-
-if __name__ == "__main__":
-    unittest.main()
+    if __name__ == "__main__":
+        unittest.main()
