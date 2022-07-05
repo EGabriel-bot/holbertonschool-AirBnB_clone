@@ -16,7 +16,6 @@ class TestFileStorage(unittest.TestCase):
     def test_objects(self):
         """ test for objects """
         FileStorage.__objects = {}
-        #assert len(FileStorage().assignment.values()) == 0
 
     def test_new(self):
         """ test the instance new """
