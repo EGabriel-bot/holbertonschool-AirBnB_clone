@@ -4,7 +4,7 @@ from models.review import Review
 import unittest
 
 
-class Test_Review(unittest.TestCase):
+class TestReview(unittest.TestCase):
     """Review test"""
 
     def test_variables(self):

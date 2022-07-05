@@ -5,7 +5,7 @@ from models.amenity import Amenity
 import unittest
 
 
-class Test_Amenity(unittest.TestCase):
+class TestAmenity(unittest.TestCase):
     """Amenity test"""
 
     def test_variable(self):

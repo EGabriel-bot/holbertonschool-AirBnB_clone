@@ -5,7 +5,7 @@ from models.place import Place
 import unittest
 
 
-class Test_Place(unittest.TestCase):
+class TestPlace(unittest.TestCase):
     """Place test"""
 
     def test_variables(self):

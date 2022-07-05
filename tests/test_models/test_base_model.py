@@ -6,7 +6,7 @@ from os.path import exists
 import unittest
 
 
-class Test_BaseModel(unittest.TestCase):
+class TestBaseModel(unittest.TestCase):
     """Base_model test"""
 
     def test_created_at(self):

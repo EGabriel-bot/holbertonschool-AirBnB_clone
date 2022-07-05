@@ -5,7 +5,7 @@ from models.city import City
 import unittest
 
 
-class Test_City(unittest.TestCase):
+class TestCity(unittest.TestCase):
     """City test"""
 
     def test_variable(self):

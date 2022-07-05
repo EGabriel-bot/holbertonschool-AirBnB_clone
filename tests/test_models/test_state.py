@@ -5,7 +5,7 @@ from models.state import State
 import unittest
 
 
-class Test_State(unittest.TestCase):
+class TestState(unittest.TestCase):
     """State test"""
 
     def test_variable(self):
