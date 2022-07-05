@@ -7,7 +7,7 @@ import console
 import unittest
 
 
-class Test_User(unittest.TestCase):
+class TestUser(unittest.TestCase):
     """User test"""
 
     def test_variables(self):
