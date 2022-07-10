@@ -1,0 +1,141 @@
+.places {
+	transform: translate(30px, 0);
+}
+.places > h1 {
+	margin-bottom: 0;
+	font-size: 30px;
+	transform: translate(-10px, 0);
+}
+
+article {
+	width: 390px;
+	padding: 20px;
+	margin: 20px;
+	border: #ff5a5f 1px solid;
+	border-radius: 4px;
+	height: 40px;
+	display: inline-block;
+	padding-bottom: 350px;
+	position: relative;
+}
+
+article:last-of-type {
+	transform: translate(50%, 0);
+}
+
+article h2 {
+	line-height: 0;
+	text-align: center;
+	font-size: 30px;
+}
+
+.price_by_night {
+	color: #ff5a5f;
+	border: #ff5a5f solid 4px;
+	border-radius: 100%;
+	min-width: 60px;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	transform: translate(305px, -55px);
+}
+
+.price_by_night h1 {
+	line-height: 25px;
+	font-weight: 500;
+	text-align: center;
+	font-size: 30px;
+}
+
+.information {
+	height: 80px;
+	border-top: #dddddd 1px solid;
+	border-bottom: #dddddd 1px solid;
+	margin-top: 70px;
+}
+
+.information p {
+	position: absolute;
+	font-size: 16px;
+	text-align: center;
+	width: max-content;
+	transform: translate(-5px, 30px);
+}
+
+.max_guest {
+	width: 100px;
+	height: fit-content;
+}
+
+.guest_icon {
+	background-image: url(/web_static/images/icon_group.png);
+	width: 50px;
+	height: 50px;
+	transform: translate(40px, 8px);
+}
+
+.number_rooms {
+	width: 100px;
+	height: fit-content;
+}
+
+.room_icon {
+	width: 50px;
+	height: 50px;
+	background-image: url(/web_static/images/icon_bed.png);
+	transform: translate(160px, -42px);
+}
+
+.room_icon p {
+	transform: translate(-15px, 30px);
+}
+
+.number_bathrooms {
+	width: 100px;
+	height: fit-content;
+}
+
+.bath_icon {
+	width: 50px;
+	height: 50px;
+	background-image: url(/web_static/images/icon_bath.png);
+	transform: translate(275px, -97px);
+}
+
+.bath_icon p {
+	transform: translate(-20px, 35px);
+}
+
+.user {
+	position: absolute;
+	font-size: 16px;
+}
+
+.description {
+	position: absolute;
+}
+
+.description p {
+	margin: 0;
+	width: 400px;
+}
+
+.second_place .user > p {
+	transform: translate(0, -70px);
+	text-align: left;
+}
+
+.second_place .description > p {
+	text-align: left;
+	transform: translate(0, -19px);
+}
+
+.third_place .user > p {
+	transform: translate(0, -70px);
+	text-align: left;
+}
+
+.third_place .description > p {
+	text-align: left;
+	transform: translate(0, -19px);
+}
