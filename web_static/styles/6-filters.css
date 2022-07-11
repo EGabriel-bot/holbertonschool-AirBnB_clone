@@ -72,10 +72,14 @@ button:hover {
 
 .locations:hover .popover {
 	display: block;
+	position: relative;
+	z-index: 9999;
 }
 
 .amenities:hover .popover {
 	display: block;
+	position: relative;
+	z-index: 9999;
 }
 
 .amenities .popover li:first-child {

@@ -3,6 +3,10 @@
 	transform: translate(30px, 0);
 }
 
+.places h1 {
+	font-size: 30px;
+}
+
 article {
 	width: 390px;
 	padding: 20px;
